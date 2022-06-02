@@ -1,0 +1,14 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Chat {
+  id        String   @id @db.Uuid
+  data      String   @db.Text
+  createdAt DateTime @db.Date
+}
