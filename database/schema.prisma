@@ -8,7 +8,7 @@ generator client {
 }
 
 model Chat {
-  id        String   @id @db.Uuid
+  id        String   @id @default(uuid())
   data      String   @db.Text
-  createdAt DateTime @db.Date
+  createdAt DateTime @db.Timestamp(0)
 }
